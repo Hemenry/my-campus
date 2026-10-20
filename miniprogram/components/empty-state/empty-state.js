@@ -1,4 +1,5 @@
 Component({
+  options: { styleIsolation: 'apply-shared' },
   properties: {
     title: { type: String, value: '这里还什么都没有' },
     desc: { type: String, value: '' },

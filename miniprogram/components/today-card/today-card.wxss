@@ -4,7 +4,7 @@
   background: var(--brand-100);
   border-radius: var(--radius-xl);
   padding: var(--space-3);
-  min-height: 224rpx;
+  min-height: 256rpx;
 }
 
 .today.is-finished {
