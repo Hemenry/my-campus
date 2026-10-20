@@ -1,0 +1,49 @@
+.tabs {
+  display: flex;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.tabs__item {
+  position: relative;
+  flex: none;
+  padding: 0 var(--space-2);
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs__label {
+  font-size: var(--fs-body);
+  color: var(--text-2);
+  transition: color 200ms ease-out;
+}
+
+.is-active .tabs__label {
+  color: var(--text-1);
+  font-weight: 600;
+}
+
+.tabs__bar {
+  position: absolute;
+  left: 50%;
+  bottom: 8rpx;
+  width: 0;
+  height: 6rpx;
+  border-radius: 3rpx;
+  background: var(--brand-600);
+  transform: translateX(-50%);
+  transition: width 200ms ease-out;
+}
+
+.is-active .tabs__bar {
+  width: 32rpx;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs__label,
+  .tabs__bar {
+    transition: none;
+  }
+}

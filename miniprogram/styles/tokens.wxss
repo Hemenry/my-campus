@@ -15,10 +15,14 @@ page {
   /* ---------- 中性色 ---------- */
   --bg: #f6f8f7;
   --surface: #ffffff;
+  --surface-hover: #fbfcfb;
+  --surface-sunken: #eef1ef;
+  --on-brand: #ffffff;
   --text-1: #1a1f1d;
   --text-2: #6b7a74;
   --text-3: #9aa6a1;
   --border: #e8ecea;
+  --border-soft: #d6ece2;
 
   /* ---------- 功能色：仅用于图标底块与小标签 ---------- */
   --accent-ask: #e8834a;

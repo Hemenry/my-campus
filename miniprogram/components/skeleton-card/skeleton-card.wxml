@@ -1,0 +1,12 @@
+<view class="sk card">
+  <view class="sk__head">
+    <view class="sk__avatar"></view>
+    <view class="sk__meta">
+      <view class="sk__line sk__line--name"></view>
+      <view class="sk__line sk__line--sub"></view>
+    </view>
+  </view>
+
+  <view class="sk__line sk__line--title"></view>
+  <view class="sk__line" wx:for="{{rows}}" wx:key="index"></view>
+</view>

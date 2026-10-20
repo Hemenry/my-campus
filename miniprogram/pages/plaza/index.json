@@ -1,5 +1,16 @@
 {
-  "navigationBarTitleText": "广场",
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "backgroundColor": "#F6F8F7",
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "search-bar": "/components/search-bar/search-bar",
+    "quick-grid": "/components/quick-grid/quick-grid",
+    "today-card": "/components/today-card/today-card",
+    "segment-tabs": "/components/segment-tabs/segment-tabs",
+    "post-card": "/components/post-card/post-card",
+    "empty-state": "/components/empty-state/empty-state",
+    "skeleton-card": "/components/skeleton-card/skeleton-card"
+  }
 }

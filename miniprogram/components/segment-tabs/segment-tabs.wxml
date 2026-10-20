@@ -1,0 +1,12 @@
+<scroll-view class="tabs" scroll-x enable-flex show-scrollbar="{{false}}">
+  <view
+    class="tabs__item {{active === index ? 'is-active' : ''}}"
+    wx:for="{{items}}"
+    wx:key="*this"
+    data-index="{{index}}"
+    bindtap="onChange"
+  >
+    <text class="tabs__label">{{item}}</text>
+    <view class="tabs__bar"></view>
+  </view>
+</scroll-view>

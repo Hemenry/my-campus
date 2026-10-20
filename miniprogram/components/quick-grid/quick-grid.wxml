@@ -1,0 +1,15 @@
+<view class="grid">
+  <view
+    class="grid__item pressable"
+    wx:for="{{items}}"
+    wx:key="key"
+    data-key="{{item.key}}"
+    bindtap="onSelect"
+    hover-class="grid__item--hover"
+  >
+    <view class="grid__icon" style="background: {{item.bg}};">
+      <text class="grid__glyph" style="color: {{item.color}};">{{item.glyph}}</text>
+    </view>
+    <text class="grid__label">{{item.label}}</text>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<view class="nav gutter" style="padding-top: {{statusBarHeight}}px">
+  <view class="nav__row">
+    <view class="nav__brand">
+      <view class="nav__logo">G</view>
+      <view class="nav__meta">
+        <text class="nav__name">{{brandName}}</text>
+        <view class="nav__school" bindtap="onSchool" hover-class="nav__school--hover">
+          <text class="nav__school-text">{{school}}</text>
+          <text class="nav__chev">⌄</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="nav__actions">
+      <view
+        wx:if="{{showPublish}}"
+        class="nav__publish"
+        bindtap="onPublish"
+        hover-class="nav__publish--hover"
+        aria-label="发布内容"
+      >
+        <text class="nav__publish-glyph">＋</text>
+      </view>
+
+      <view class="nav__bell" bindtap="onNotify" hover-class="nav__bell--hover" aria-label="通知">
+        <view class="bell">
+          <view class="bell__body"></view>
+          <view class="bell__clapper"></view>
+        </view>
+        <view wx:if="{{unread > 0}}" class="nav__dot"></view>
+      </view>
+    </view>
+  </view>
+</view>
