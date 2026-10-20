@@ -1,8 +1,8 @@
 {
   "description": "GeekCampus 校园学习互助小程序",
-  "miniprogramRoot": "./",
+  "miniprogramRoot": "",
   "compileType": "miniprogram",
-  "libVersion": "3.5.5",
+  "libVersion": "3.17.4",
   "appid": "touristappid",
   "projectname": "GeekCampus",
   "setting": {
@@ -11,7 +11,20 @@
     "enhance": true,
     "postcss": true,
     "minified": true,
-    "newFeature": true
+    "newFeature": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
   },
-  "condition": {}
+  "condition": {},
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
 }
