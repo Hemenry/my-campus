@@ -1,0 +1,48 @@
+[Unit]
+Description=GeekCampus API (Gunicorn)
+Documentation=file:///srv/geekcampus/deploy/README.md
+After=network-online.target mysql.service
+Wants=network-online.target mysql.service
+
+[Service]
+Type=simple
+User=geekcampus
+Group=geekcampus
+WorkingDirectory=/srv/geekcampus/server
+
+Environment="PATH=/srv/geekcampus/server/.venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONUNBUFFERED=1"
+EnvironmentFile=-/srv/geekcampus/server/.env
+
+# 2 vCPU / 2G：2 个进程 × 4 线程足够，别往上加
+# max-requests 用于定期回收进程，防止长期运行内存缓慢上涨
+ExecStart=/srv/geekcampus/server/.venv/bin/gunicorn \
+    --bind 127.0.0.1:5001 \
+    --workers 2 \
+    --worker-class gthread \
+    --threads 4 \
+    --timeout 60 \
+    --graceful-timeout 30 \
+    --max-requests 800 \
+    --max-requests-jitter 100 \
+    --access-logfile - \
+    --error-logfile - \
+    wsgi:app
+
+Restart=always
+RestartSec=3
+KillSignal=SIGTERM
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=geekcampus
+
+# 基础加固：不给提权、私有临时目录、系统目录只读、只放开上传目录可写
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/srv/geekcampus/server/uploads
+
+[Install]
+WantedBy=multi-user.target

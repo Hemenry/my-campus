@@ -1,3 +1,20 @@
 node_modules/
 .superpowers/
 miniprogram/project.private.config.json
+.tmp/
+
+# AI 助手工作区（含本地操作记录、服务器信息，不对外）
+.workbuddy/
+
+# 后端
+server/.venv/
+server/.env
+server/uploads/*
+!server/uploads/.gitkeep
+__pycache__/
+*.pyc
+
+# 前端
+web/dist/
+web/dist_old/
+web/node_modules/

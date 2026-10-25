@@ -1,0 +1,80 @@
+/* Vue 挂载点承接了 H5 里 body 的居中职责，其余样式全部沿用 h5/styles.css */
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+@media (max-width: 519px) {
+  #app {
+    min-height: 100dvh;
+  }
+}
+
+/* 路由切换时内容轻微上浮，和 H5 的 rise 动效保持一致 */
+.screen > * {
+  animation: rise 0.38s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* 登录页沿用 H5 的表单样式，补两处排版 */
+.login-hero {
+  margin-top: 18px;
+}
+
+.login-hero .hello__h {
+  font-size: 24px;
+}
+
+.login-switch {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+
+.login-switch button {
+  color: var(--brand-700);
+  font-weight: 600;
+}
+
+.login-demo {
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--text-3);
+  text-align: center;
+}
+
+/* 搜索：H5 是按钮，这里换成同尺寸输入框 */
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--text-1);
+}
+
+.search input::placeholder {
+  color: var(--text-3);
+}
+
+/* H5 里详情/复习页会把 .screen 变成 flex 列容器，Vue 下用同样规则补齐 */
+.screen--flush {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 详情页底部留出操作栏高度，评论输入框不会被遮住 */
+.detail {
+  padding-bottom: 76px;
+}
+
+.composer .textarea {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
