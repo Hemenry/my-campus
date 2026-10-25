@@ -1,6 +1,6 @@
 # GeekCampus 校园学习互助
 
-把「记录 → 求助 → 沉淀 → 复习」串成一条闭环的校园学习工具。仓库里现在有一套 Web 客户端和一套后端：
+把「记录 → 求助 → 沉淀 → 复习」串成一条闭环的校园学习工具。仓库分为 Web 客户端与后端 API 两部分：
 
 | 目录 | 内容 | 技术栈 |
 |---|---|---|
@@ -8,7 +8,31 @@
 | `web/` | Web 客户端（手机壳布局，桌面端带左侧闭环导航） | Vue 3 + Vite + Vue Router + Pinia + Axios |
 | `docs/` | 设计规范、接口清单与实施计划 | — |
 
-`web/` 完整复刻了早期 H5 原型的布局与视觉：直接沿用原型的设计规范（`web/src/styles/app.css`，主色 `#1F8A6B` / 深色 `#0E5C46`），页面结构、字号与栅格与原 H5 一致 —— 430px 手机壳、底部四 tab、桌面端左侧「记录 → 求助 → 沉淀 → 复习」闭环栏。原来的零依赖 H5 演示版本已移除。
+`web/` 是移动优先的 Web 客户端：430px 手机壳、底部四个一级入口，桌面端在左侧展开「记录 → 求助 → 沉淀 → 复习」闭环导航。设计 token 集中在 `web/src/styles/app.css`（主色 `#1F8A6B` / 深色 `#0E5C46`），页面样式一律取变量、不写裸色值。
+
+## 界面预览
+
+| 广场 | 求助详情 |
+|:---:|:---:|
+| ![](docs/screenshots/plaza.png) | ![](docs/screenshots/detail.png) |
+
+| 英语与打卡 | 背诵卡 |
+|:---:|:---:|
+| ![](docs/screenshots/english.png) | ![](docs/screenshots/review.png) |
+
+| 消息 | 我的 |
+|:---:|:---:|
+| ![](docs/screenshots/message.png) | ![](docs/screenshots/mine.png) |
+
+背诵卡点一下翻面，看释义与例句，再凭第一反应选「不认识 / 模糊 / 认识」，下次复习时间按评级自动排：
+
+![](docs/screenshots/review-back.png)
+
+桌面端把手机壳居中，左侧常驻闭环导航，当前所处环节会点亮：
+
+![](docs/screenshots/desktop.png)
+
+> 截图取自 `linyizhou` 账号在本地 `npm run dev` + Flask 服务的实际界面，数据来自 `seed.py` 与本地使用记录。
 
 ## 快速启动
 
